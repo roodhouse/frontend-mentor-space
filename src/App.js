@@ -1,7 +1,6 @@
 import './App.css';
 import Header from './components/Header'
-import Hero from './components/Hero'
-import Button from './components/Button'
+import Home from './components/Home';
 
 function App() {
   return (
@@ -11,13 +10,9 @@ function App() {
           <div id='headerWrapper' className='mb-[58px]'>
             <Header />
           </div>
-          <div id='heroWrapper' className='mb-[81px]'>
-            <Hero />
+          <div id='homeWrapper' className=''>
+            <Home />
           </div>
-          <div id='btnWrapper'>
-            <Button />
-          </div>
-
         </div>
       </div>
     </div>
