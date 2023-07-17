@@ -11,7 +11,7 @@ function Menu() {
             <div id="theMenu" className='w-full'>
                 <ul className='flex flex-col'>
                     <li className='mb-8'>
-                        <a href="home" className='text-white flex justify-between items-center h-[31px] hover:border-r-4 hover:border-r-white'>
+                        <a href="/" className='text-white flex justify-between items-center h-[31px] hover:border-r-4 hover:border-r-white'>
                             <div id='homeLeft' className='flex'>
                                 <p className='mr-[11px] font-["Barlow_Condensed"] text-white text-base font-bold tracking-[2.7px]'>00</p>
                                 <p className='font-["Barlow_Condensed"] text-white text-base font-normal tracking-[2.7px]'>HOME</p>
