@@ -11,7 +11,7 @@ function App() {
     <div className="App h-[667px]">
       <div id='mainWrapper' className='h-full bg-[url("/src/assets/home/background-home-mobile.jpg")] px-6 pt-6 pb-12 bg-no-repeat'>
         <div id='mainContainer'>
-          <div id='headerWrapper' className='mb-[58px]'>
+          <div id='headerWrapper' className=''>
             <Header />
           </div>
           <div id='homeWrapper' className=''>
