@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Data from '../data.json'
 import { useParams } from 'react-router-dom';
 import Moon from './destination/Moon'
@@ -13,13 +13,48 @@ import TitanImage from '../assets/destination/image-titan.webp'
 
 function Destination() {
 
+    const [thePlanets, setThePlanets] = useState('')
+    const [thePlanetImage, setThePlanetImage] = useState('')
    
-    const { destination } = useParams()
-    console.log(useParams())
+    // const { destination } = useParams()
+    // console.log(useParams())
 
-    Data.destinations.forEach((place) => {
-        console.log(place)
-    })
+    // Data.destinations.forEach((place) => {
+    //     console.log(place)
+    // })
+
+    useEffect(() => {
+        let planets = document.querySelectorAll('.planet')
+        
+        planets = Array.from(planets)
+        
+        planets.forEach((planet)=> {
+            
+            planet.addEventListener('click', (e) => {
+                
+                setThePlanets(e.target.id)
+                
+                let planetImage = document.getElementById(e.target.id+'Image')
+
+                planetImage.classList.remove('hidden')
+                if (planetImage.classList.contains('selectedImage')) {
+                    console.log('image is here')
+                    return
+                } else if (!planetImage.classList.contains('selectedImage')) {
+                    console.log('no image')
+                }
+                
+            })
+        })
+
+    },[])
+
+    console.log(thePlanets)
+    console.log(thePlanetImage)
+    // let planetImage = document.getElementById(thePlanets+'Image')
+    // console.log(planetImage)
+    // planetImage.classList.remove('hidden') 
+
   return (
     <>
         <div id="destinationContainer" className='mt-[34px]'>
@@ -32,7 +67,7 @@ function Destination() {
                 </div>
             </div>
             <div id="destinationImage">
-                <div id="moonImage" className='w-full h-[259px] flex justify-center items-center mb-[30px]'>
+                <div id="moonImage" className='selectedImage w-full h-[259px] flex justify-center items-center mb-[30px]'>
                     <img src={MoonImage} alt={Data.destinations[0].name} className='w-[259px] h-[259px]' />
                 </div>
                 <div id="marsImage" className='hidden w-full h-[259px] flex justify-center items-center mb-[30px]'>
@@ -47,10 +82,12 @@ function Destination() {
 
             </div>
             <div id="destMenu" className='mb-5'>
-                <ul className='flex justify-evenly text-white font-["Barlow_Condensed"] text-base font-normal uppercase tracking-[2.7px]'>
-                    {Data.destinations.map((item) => (
-                        <li className='h-[28px] border-b-white border-b-[3px]' key={item.name}>{item.name}</li>
-                    ))}
+                <ul className='flex justify-evenly font-["Barlow_Condensed"] text-base font-normal uppercase tracking-[2.7px]'>    
+                    <li id='moon' className='selected planet text-lightBlue h-[28px]'>Moon</li>
+                    <li id='mars' className='planet h-[28px] text-lightBlue'>Mars</li>
+                    <li id='europa' className='planet h-[28px] text-lightBlue'>Europa</li>
+                    <li id='titan' className='planet h-[28px] text-lightBlue'>Titan</li>
+                    
                 </ul>
             </div>
             <div id="moonWrapper">
