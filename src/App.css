@@ -2,3 +2,7 @@
     color: white;
     border-bottom: 3px solid white;
 }
+
+.selectedImage {
+    display: flex;
+}

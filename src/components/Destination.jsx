@@ -25,23 +25,24 @@ function Destination() {
 
     useEffect(() => {
         let planets = document.querySelectorAll('.planet')
+        let currentSelectedImage = document.querySelector('.selectedImage')
         
         planets = Array.from(planets)
         
         planets.forEach((planet)=> {
             
-            planet.addEventListener('click', (e) => {
-                
+            planet.addEventListener('click', (e) => {                
                 setThePlanets(e.target.id)
-                
                 let planetImage = document.getElementById(e.target.id+'Image')
 
-                planetImage.classList.remove('hidden')
                 if (planetImage.classList.contains('selectedImage')) {
-                    console.log('image is here')
                     return
                 } else if (!planetImage.classList.contains('selectedImage')) {
-                    console.log('no image')
+                    
+                    currentSelectedImage.classList.remove('selectedImage')
+                    currentSelectedImage.classList.add('hidden')
+                    planetImage.classList.add('selectedImage')
+                    currentSelectedImage = planetImage;
                 }
                 
             })
@@ -49,8 +50,6 @@ function Destination() {
 
     },[])
 
-    console.log(thePlanets)
-    console.log(thePlanetImage)
     // let planetImage = document.getElementById(thePlanets+'Image')
     // console.log(planetImage)
     // planetImage.classList.remove('hidden') 
@@ -67,16 +66,16 @@ function Destination() {
                 </div>
             </div>
             <div id="destinationImage">
-                <div id="moonImage" className='selectedImage w-full h-[259px] flex justify-center items-center mb-[30px]'>
+                <div id="moonImage" className='selectedImage w-full h-[259px] hidden justify-center items-center mb-[30px]'>
                     <img src={MoonImage} alt={Data.destinations[0].name} className='w-[259px] h-[259px]' />
                 </div>
-                <div id="marsImage" className='hidden w-full h-[259px] flex justify-center items-center mb-[30px]'>
+                <div id="marsImage" className='hidden w-full h-[259px] justify-center items-center mb-[30px]'>
                     <img src={MarsImage} alt={Data.destinations[1].name} className='w-[259px] h-[259px]' />
                 </div>
-                <div id="europaImage" className='hidden w-full h-[259px] flex justify-center items-center mb-[30px]'>
+                <div id="europaImage" className='hidden w-full h-[259px] justify-center items-center mb-[30px]'>
                     <img src={EuropaImage} alt={Data.destinations[2].name} className='w-[259px] h-[259px]' />
                 </div>
-                <div id="titanImage" className='hidden w-full h-[259px] flex justify-center items-center mb-[30px]'>
+                <div id="titanImage" className='hidden w-full h-[259px] justify-center items-center mb-[30px]'>
                     <img src={TitanImage} alt={Data.destinations[3].name} className='w-[259px] h-[259px]' />
                 </div>
 
