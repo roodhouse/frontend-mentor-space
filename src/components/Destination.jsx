@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import Data from '../data.json'
-import { useParams } from 'react-router-dom';
 import Moon from './destination/Moon'
 import Mars from './destination/Mars'
 import Europa from './destination/Europa'
@@ -9,7 +8,6 @@ import MoonImage from '../assets/destination/image-moon.webp'
 import MarsImage from '../assets/destination/image-mars.webp'
 import EuropaImage from '../assets/destination/image-europa.webp';
 import TitanImage from '../assets/destination/image-titan.webp'
-import Background from '../assets/destination/background-destination-mobile.jpg'
 
 
 function Destination() {
@@ -78,7 +76,7 @@ function Destination() {
   return (
     <>
         <div id="destinationContainer" className='mt-[34px]'>
-            <div id="destinationHeader" className='flex justify-center mb-9'>
+            <div id="destinationHeader" className='flex justify-center mb-8'>
                 <div id="destinationHeadNumber" className='text-white mr-[18px] font-["Barlow_Condensed"] text-base font-bold tracking-[2.7px] opacity-25'>
                     <p>01</p>
                 </div>

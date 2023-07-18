@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App">
-      <div id='mainWrapper' className='h-full bg-[url("/src/assets/home/background-home-mobile.jpg")] bg-cover px-6 pt-6 pb-12 bg-no-repeat'>
+      <div id='mainWrapper' className='h-full bg-[url("/src/assets/home/background-home-mobile.jpg")] bg-cover px-6 pt-6 pb-12 bg-no-repeat mix-blend-screen'>
         <div id='mainContainer'>
           <div id='headerWrapper' className=''>
             <Header />
