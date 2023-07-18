@@ -1,14 +1,16 @@
+import React, { useState, useEffect } from 'react'
 import './App.css';
 import Header from './components/Header'
 import Destination from './components/Destination';
 import Home from './components/Home';
 import Crew from './components/Crew';
 import Technology from './components/Technology'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useParams } from 'react-router-dom';
 
 function App() {
+
   return (
-    <div className="App h-[667px]">
+    <div className="App">
       <div id='mainWrapper' className='h-full bg-[url("/src/assets/home/background-home-mobile.jpg")] px-6 pt-6 pb-12 bg-no-repeat'>
         <div id='mainContainer'>
           <div id='headerWrapper' className=''>

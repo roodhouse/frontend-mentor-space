@@ -9,6 +9,7 @@ import MoonImage from '../assets/destination/image-moon.webp'
 import MarsImage from '../assets/destination/image-mars.webp'
 import EuropaImage from '../assets/destination/image-europa.webp';
 import TitanImage from '../assets/destination/image-titan.webp'
+import Background from '../assets/destination/background-destination-mobile.jpg'
 
 
 function Destination() {
@@ -16,25 +17,26 @@ function Destination() {
     const [thePlanets, setThePlanets] = useState('')
     const [thePlanetImage, setThePlanetImage] = useState('')
    
-    // const { destination } = useParams()
-    // console.log(useParams())
-
-    // Data.destinations.forEach((place) => {
-    //     console.log(place)
-    // })
-
     useEffect(() => {
         let planets = document.querySelectorAll('.planet')
         let currentSelectedImage = document.querySelector('.selectedImage')
+        let selectedPlanet = document.querySelector('.selected')
+        let selectedPlanetCopy = document.querySelector('.selectedCopy')
         
+        // Change background
+        let mainWrapper = document.getElementById('mainWrapper')
+        console.log(mainWrapper)
+        mainWrapper.style.backgroundImage = "url('https://s3.us-east-2.amazonaws.com/images.rughdesign.com/wp-content/uploads/background-destination-mobile.jpg')"
+
         planets = Array.from(planets)
         
         planets.forEach((planet)=> {
             
-            planet.addEventListener('click', (e) => {                
+            planet.addEventListener('click', (e) => {  
+                console.log(planet)              
                 setThePlanets(e.target.id)
+                // Switch the image to the clicked planet
                 let planetImage = document.getElementById(e.target.id+'Image')
-
                 if (planetImage.classList.contains('selectedImage')) {
                     return
                 } else if (!planetImage.classList.contains('selectedImage')) {
@@ -44,15 +46,34 @@ function Destination() {
                     planetImage.classList.add('selectedImage')
                     currentSelectedImage = planetImage;
                 }
-                
+
+                // Toggle the menu bar between planets
+                if (planet.classList.contains('selected')) {
+                    return
+                } else if (!planet.classList.contains('selected')) {
+                    selectedPlanet.classList.remove('selected')
+                    planet.classList.add('selected')
+                    selectedPlanet = planet
+                }
+
+                // Toggle the info section
+                let planetCopy = document.getElementById(e.target.id+'Wrapper')
+                console.log(planetCopy)
+                if (planetCopy.classList.contains('selectedCopy')) {
+                    console.log('copy here')
+                    return
+                } else if (!planetCopy.classList.contains('selectedCopy')) {
+                    console.log('copy not here')
+                    selectedPlanetCopy.classList.remove('selectedCopy')
+                    selectedPlanetCopy.classList.add('hidden')
+                    planetCopy.classList.add('selectedCopy')
+                    planetCopy.classList.remove('hidden')
+                    selectedPlanetCopy = planetCopy
+                }      
             })
         })
 
     },[])
-
-    // let planetImage = document.getElementById(thePlanets+'Image')
-    // console.log(planetImage)
-    // planetImage.classList.remove('hidden') 
 
   return (
     <>
@@ -89,7 +110,7 @@ function Destination() {
                     
                 </ul>
             </div>
-            <div id="moonWrapper">
+            <div id="moonWrapper" className='selectedCopy'>
                 <Moon />
             </div>
             <div id="marsWrapper" className='hidden'>
