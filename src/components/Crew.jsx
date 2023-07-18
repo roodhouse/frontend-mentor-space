@@ -9,14 +9,66 @@ import PilotImage from '../assets/crew/image-victor-glover.webp'
 import FlightEngineerImage from '../assets/crew/image-anousheh-ansari.webp'
 import Data from '../data.json'
 
+
 function Crew() {
+      const [thePerson, setThePerson] = useState('')
 
   useEffect(() => {
+      let crew = document.querySelectorAll('.crew')
+      let currentSelectedCrewImage = document.querySelector('.selectedCrewImage')
+      console.log(currentSelectedCrewImage)
+      let selectedCrew = document.querySelector('.selectedCrew')
+      let selectedCrewCopy = document.querySelector('.selectedCrewCopy')
+
     // Change background
     let mainWrapper = document.getElementById('mainWrapper')
-    console.log(mainWrapper)
     mainWrapper.style.backgroundImage = "url('https://s3.us-east-2.amazonaws.com/images.rughdesign.com/wp-content/uploads/background-crew-mobile.jpg')"
+
+    crew = Array.from(crew)
+        
+        crew.forEach((person)=> {
+            
+            person.addEventListener('click', (e) => {  
+                setThePerson(e.target.id)
+                // Switch the image to the clicked person
+                let crewImage = document.getElementById(e.target.id+'Image')
+                if (crewImage.classList.contains('selectedCrewImage')) {
+                    return
+                } else if (!crewImage.classList.contains('selectedCrewImage')) {
+                    currentSelectedCrewImage.classList.remove('selectedCrewImage')
+                    currentSelectedCrewImage.classList.add('hidden')
+                    crewImage.classList.add('selectedCrewImage')
+                    currentSelectedCrewImage = crewImage;
+                }
+
+                // Toggle the menu bar between people
+                if (person.classList.contains('selectedCrew')) {
+                    return
+                } else if (!person.classList.contains('selectedCrew')) {
+                    selectedCrew.classList.remove('selectedCrew')
+                    person.classList.add('selectedCrew')
+                    selectedCrew = person
+                }
+
+                // // Toggle the info section
+                let crewCopy = document.getElementById(e.target.id+'Wrapper')
+                console.log(crewCopy)
+                if (crewCopy.classList.contains('selectedCrewCopy')) {
+                    console.log('copy here')
+                    return
+                } else if (!crewCopy.classList.contains('selectedCrewCopy')) {
+                    console.log('copy not here')
+                    selectedCrewCopy.classList.remove('selectedCrewCopy')
+                    selectedCrewCopy.classList.add('hidden')
+                    crewCopy.classList.add('selectedCrewCopy')
+                    crewCopy.classList.remove('hidden')
+                    selectedCrewCopy = crewCopy
+                }      
+            })
+        })
   })
+
+
   return (
     <>
         <div id="crewContainer" className='mt-[34px]'>
@@ -29,30 +81,30 @@ function Crew() {
                 </div>
             </div>
             <div id="crewImage">
-                <div id="commanderImage" className='selectedImage hidden justify-center items-center mb-[30px]'>
+                <div id="commanderImage" className='selectedCrewImage hidden justify-center items-center'>
                     <img src={CommanderImage} alt={Data.crew[0].name} className='w-[177px] h-[222px]' />
                 </div>
-                <div id="missionSpecialistImage" className='hidden w-full h-[259px] justify-center items-center mb-[30px]'>
-                    <img src={MissionSpecialistImage} alt={Data.crew[1].name} className='w-[259px] h-[259px]' />
+                <div id="missionSpecialistImage" className='hidden justify-center items-center'>
+                    <img src={MissionSpecialistImage} alt={Data.crew[1].name} className='w-[154px] h-[222px]' />
                 </div>
-                <div id="pilotImage" className='hidden w-full h-[259px] justify-center items-center mb-[30px]'>
-                    <img src={PilotImage} alt={Data.crew[2].name} className='w-[259px] h-[259px]' />
+                <div id="pilotImage" className='hidden justify-center items-center'>
+                    <img src={PilotImage} alt={Data.crew[2].name} className='w-[181px] h-[222px]' />
                 </div>
-                <div id="flightEngineerImage" className='hidden w-full h-[259px] justify-center items-center mb-[30px]'>
-                    <img src={FlightEngineerImage} alt={Data.crew[3].name} className='w-[259px] h-[259px]' />
+                <div id="flightEngineerImage" className='hidden justify-center items-center'>
+                    <img src={FlightEngineerImage} alt={Data.crew[3].name} className='w-[226px] h-[222px]' />
                 </div>
-
             </div>
+            <div id="crewBreakLine" className='w-full h-[1px] bg-[#383B4B] mb-8'/>
             <div id="crewMenu" className='mb-5'>
-                <ul className='flex justify-evenly font-["Barlow_Condensed"] text-base font-normal uppercase tracking-[2.7px]'>    
-                    <li id='moon' className='selected planet text-lightBlue h-[28px]'>Moon</li>
-                    <li id='mars' className='planet h-[28px] text-lightBlue'>Mars</li>
-                    <li id='europa' className='planet h-[28px] text-lightBlue'>Europa</li>
-                    <li id='titan' className='planet h-[28px] text-lightBlue'>Titan</li>
+                <ul className='flex justify-center font-["Barlow_Condensed"] text-base font-normal uppercase tracking-[2.7px]'>    
+                    <li id='commander' className='selectedCrew crew w-[10px] h-[10px] bg-white rounded-[50%] opacity-[0.174363] mr-4'></li>
+                    <li id='missionSpecialist' className='crew w-[10px] h-[10px] bg-white rounded-[50%] opacity-[0.174363] mr-4'></li>
+                    <li id='pilot' className='crew w-[10px] h-[10px] bg-white rounded-[50%] opacity-[0.174363] mr-4'></li>
+                    <li id='flightEngineer' className='crew w-[10px] h-[10px] bg-white rounded-[50%] opacity-[0.174363]'></li>
                     
                 </ul>
             </div>
-            <div id="commanderWrapper" className='selectedCopy'>
+            <div id="commanderWrapper" className='selectedCrewCopy'>
                 <Commander />
             </div>
             <div id="missionSpecialistWrapper" className='hidden'>

@@ -6,3 +6,11 @@
 .selectedImage {
     display: flex;
 }
+
+.selectedCrew {
+    opacity: 100;
+}
+
+.selectedCrewImage {
+    display: flex;
+}
