@@ -35,11 +35,11 @@ function Header() {
         <div id="logoWrapper">
           <Logo />
         </div>
-        <div id="hamburger">
+        <div id="hamburger" className='lg:hidden'>
           <Hamburger />
         </div>
       </div>
-      <div id="menuWrapper" className='hidden'>
+      <div id="menuWrapper" className='hidden lg:block lg:w-[450px] lg:h-24'>
         <Menu />
       </div>
     </div>
