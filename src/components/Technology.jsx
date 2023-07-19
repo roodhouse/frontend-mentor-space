@@ -1,7 +1,7 @@
-import React from 'react'
-import LaunchImage from '../assets/technology/image-launch-vehicle-portrait.jpg'
-import PortImage from '../assets/technology/image-spaceport-portrait.jpg'
-import CapsuleImage from '../assets/technology/image-space-capsule-portrait.jpg'
+import React, { useState, useEffect } from 'react'
+import LaunchImage from '../assets/technology/image-launch-vehicle-landscape.jpg'
+import PortImage from '../assets/technology/image-spaceport-landscape.jpg'
+import CapsuleImage from '../assets/technology/image-space-capsule-landscape.jpg'
 import Data from '../data.json'
 import Launch from '../components/technology/Launch'
 import Port from '../components/technology/Port'
@@ -12,6 +12,69 @@ import Capsule from '../components/technology/Capsule'
 // set up data
 
 function Technology() {
+
+  const [theTech, setTheTech] = useState('')
+  const [theTechImage, setTechImage] = useState('')
+
+  useEffect(() => {
+    let tech = document.querySelectorAll('.tech')
+    let currentSelectedTechImage = document.querySelector('.selectedTechImage')
+    let selectedTech = document.querySelector('.selectedTech')
+    let selectedTechCopy = document.querySelector('.selectedTechCopy')
+    
+    // Change background
+    let mainWrapper = document.getElementById('mainWrapper')
+    console.log(mainWrapper)
+    mainWrapper.style.backgroundImage = "url('https://s3.us-east-2.amazonaws.com/images.rughdesign.com/wp-content/uploads/background-technology-mobile.jpg')"
+
+    tech = Array.from(tech)
+    
+    tech.forEach((technology)=> {
+        
+        technology.addEventListener('click', (e) => {  
+            console.log(technology)              
+            setTheTech(e.target.id)
+            // Switch the image to the clicked tech
+            let techImage = document.getElementById(e.target.id+'Image')
+            if (techImage.classList.contains('selectedTechImage')) {
+                return
+            } else if (!techImage.classList.contains('selectedTechImage')) {
+                
+              currentSelectedTechImage.classList.remove('selectedTechImage')
+              currentSelectedTechImage.classList.add('hidden')
+                techImage.classList.add('selectedTechImage')
+                currentSelectedTechImage = techImage;
+            }
+
+            // Toggle the menu bar between tech
+            if (technology.classList.contains('selectedTech')) {
+                return
+            } else if (!technology.classList.contains('selectedTech')) {
+                selectedTech.classList.remove('selectedTech')
+                technology.classList.add('selectedTech')
+                selectedTech = technology
+            }
+
+            // Toggle the info section
+            let techCopy = document.getElementById(e.target.id+'Wrapper')
+            console.log(techCopy)
+            if (techCopy.classList.contains('selectedTechCopy')) {
+                console.log('copy here')
+                return
+            } else if (!techCopy.classList.contains('selectedTechCopy')) {
+                console.log('copy not here')
+                selectedTechCopy.classList.remove('selectedTechCopy')
+                selectedTechCopy.classList.add('hidden')
+                techCopy.classList.add('selectedTechCopy')
+                techCopy.classList.remove('hidden')
+                selectedTechCopy = techCopy
+            }      
+        })
+    })
+
+},[])
+
+
   return (
     <>
         <div id="technologyContainer" className='mt-[34px]'>
@@ -24,32 +87,31 @@ function Technology() {
                 </div>
             </div>
             <div id="technologyImage">
-                <div id="launchImage" className='selectedImage w-full h-[259px] hidden justify-center items-center mb-[30px]'>
-                    <img src={LaunchImage} alt={Data.technology[0].name} className='w-[259px] h-[259px]' />
+                <div id="launchImage" className='selectedTechImage w-full hidden justify-center items-center mb-[30px]'>
+                    <img src={LaunchImage} alt={Data.technology[0].name} className='w-full h-[170px]' />
                 </div>
-                <div id="portImage" className='hidden w-full h-[259px] justify-center items-center mb-[30px]'>
-                    <img src={PortImage} alt={Data.technology[1].name} className='w-[259px] h-[259px]' />
+                <div id="portImage" className='hidden w-full justify-center items-center mb-[30px]'>
+                    <img src={PortImage} alt={Data.technology[1].name} className='w-full h-[170px]' />
                 </div>
-                <div id="capsuleImage" className='hidden w-full h-[259px] justify-center items-center mb-[30px]'>
-                    <img src={CapsuleImage} alt={Data.technology[2].name} className='w-[259px] h-[259px]' />
+                <div id="capsuleImage" className='hidden w-full justify-center items-center mb-[30px]'>
+                    <img src={CapsuleImage} alt={Data.technology[2].name} className='w-full h-[170px]' />
                 </div>
 
             </div>
-            <div id="techMenu" className='mb-5'>
-                <ul className='flex justify-evenly font-["Barlow_Condensed"] text-base font-normal uppercase tracking-[2.7px]'>    
-                    <li id='launch' className='selectedTech tech text-lightBlue h-[28px]'>Moon</li>
-                    <li id='port' className='tech h-[28px] text-lightBlue'>Mars</li>
-                    <li id='capsule' className='tech h-[28px] text-lightBlue'>Europa</li>
-                    
+            <div id="techMenu" className='mb-[26px]'>
+                <ul className='flex justify-center font-["Bellefair"] text-base font-normal tracking-[1px]'>    
+                    <li id='launch' className='selectedTech tech w-10 h-10 text-white border border-white/[.25] rounded-[50%] text-center flex justify-center items-center mr-4'>1</li>
+                    <li id='port' className='tech w-10 h-10 text-white border border-white/[.25] rounded-[50%] text-center flex justify-center items-center mr-4'>2</li>
+                    <li id='capsule' className='tech w-10 h-10 text-white border border-white/[.25] rounded-[50%] text-center flex justify-center items-center'>3</li>
                 </ul>
             </div>
-            <div id="moonWrapper" className='selectedTechCopy'>
+            <div id="launchWrapper" className='selectedTechCopy px-6'>
                 <Launch />
             </div>
-            <div id="marsWrapper" className='hidden'>
+            <div id="portWrapper" className='hidden px-6'>
                 <Port />
             </div>
-            <div id="europaWrapper" className='hidden'>
+            <div id="capsuleWrapper" className='hidden px-6'>
                 <Capsule />
             </div>
         </div>
