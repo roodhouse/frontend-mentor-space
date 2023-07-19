@@ -30,15 +30,16 @@ function Header() {
 
   return (
     <>
-    <div id="headerContainer">
+    <div id="headerContainer" className='xl:flex xl:items-center'>
       <div id="iconContainer" className='flex justify-between items-center'>
-        <div id="logoWrapper">
+        <div id="logoWrapper" className='xl:mr-16'>
           <Logo />
         </div>
         <div id="hamburger" className='md:hidden'>
           <Hamburger />
         </div>
       </div>
+      <div id="mainLine" className='hidden xl:block xl:w-[473px] xl:h-[1px] bg-white opacity-[0.2514851987361908]'/>
       <div id="menuWrapper" className='hidden md:block'>
         <Menu />
       </div>
