@@ -14,7 +14,7 @@ function Titan() {
               <p>{Data.destinations[3].description}</p>
             </div>
             <div id="titanBreakLine" className='w-full h-[1px] bg-[#383B4B] mb-8 md:mb-7'/>
-            <div id="distanceTravel" className='md:flex md:justify-evenly'>
+            <div id="distanceTitanTravel" className='md:flex md:justify-evenly md:mb-[62px]'>
               <div id="titanDistanceContainer" className='flex flex-col items-center mb-8 md:mb-0'>
                 <div id="titanDistanceLabel" className='text-lightBlue font-["Barlow_Condensed"] text-sm font-normal tracking-[2.362px] uppercase mb-3'>
                   <p>Avg. Distance</p>

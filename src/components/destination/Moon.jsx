@@ -14,7 +14,7 @@ function Moon() {
               <p>{Data.destinations[0].description}</p>
             </div>
             <div id="moonBreakLine" className='w-full h-[1px] bg-[#383B4B] mb-8 md:mb-7'/>
-            <div id="distanceTravel" className='md:flex md:justify-evenly'>
+            <div id="distanceMoonTravel" className='md:flex md:justify-evenly md:mb-[62px]'>
               <div id="moonDistanceContainer" className='flex flex-col items-center mb-8 md:mb-0'>
                 <div id="moonDistanceLabel" className='text-lightBlue font-["Barlow_Condensed"] text-sm font-normal tracking-[2.362px] uppercase mb-3'>
                   <p>Avg. Distance</p>

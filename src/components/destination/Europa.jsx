@@ -12,7 +12,7 @@ function Europa() {
               <p>{Data.destinations[2].description}</p>
             </div>
             <div id="europaBreakLine" className='w-full h-[1px] bg-[#383B4B] mb-8 md:mb-7'/>
-            <div id="distanceTravel" className='md:flex md:justify-evenly'>
+            <div id="distanceEuropaTravel" className='md:flex md:justify-evenly md:mb-[62px]'>
               <div id="europaDistanceContainer" className='flex flex-col items-center mb-8 md:mb-0'>
                 <div id="europaDistanceLabel" className='text-lightBlue font-["Barlow_Condensed"] text-sm font-normal tracking-[2.362px] uppercase mb-3'>
                   <p>Avg. Distance</p>
