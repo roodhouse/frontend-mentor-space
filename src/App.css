@@ -20,3 +20,22 @@
     background-color: white;
     color: #0B0D17;
 }
+
+.selectedLink {
+    border-bottom: 3px solid white;
+}
+
+.destinationBackground {
+    background-image: url('https://s3.us-east-2.amazonaws.com/images.rughdesign.com/wp-content/uploads/background-destination-mobile.jpg');
+}
+
+@media (min-width: 768px) {
+    .destinationBackground {
+        background-image: url('https://s3.us-east-2.amazonaws.com/images.rughdesign.com/wp-content/uploads/background-destination-tablet.jpg');
+    }
+
+    .selectedCopy {
+        display: flex;
+        justify-content: center;
+    }
+}

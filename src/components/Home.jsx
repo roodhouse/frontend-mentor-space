@@ -5,8 +5,8 @@ import Button from './home/Button'
 function Home() {
   return (
     <>
-    <div id="homeContainer" className='mt-[51px]'>
-          <div id='heroWrapper' className='mb-[81px]'>
+    <div id="homeContainer" className='mt-[51px] md:mt-[130px] md:flex md:flex-col md:items-center'>
+          <div id='heroWrapper' className='mb-[81px] md:mb-[156px]'>
             <Hero />
           </div>
           <div id='btnWrapper'>
