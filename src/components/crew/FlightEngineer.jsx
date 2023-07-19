@@ -11,7 +11,7 @@ function FlightEngineer() {
         <div id='flightEngineerName' className='mb-4 text-white text-center font-["Bellefair"] text-2xl font-normal uppercase md:text-[40px]'>
           <p>{Data.crew[3].name}</p>
         </div>
-        <div id="flightEngineerBio" className='text-lightBlue text-center text-[15px] font-["Barlow"] font-normal leading-[25px] md:text-base md:leading-[28px] md:w-[458px]'>
+        <div id="flightEngineerBio" className='text-lightBlue text-center text-[15px] font-["Barlow"] font-normal leading-[25px] md:text-base md:leading-[28px] md:w-[592px]'>
           <p>{Data.crew[3].bio}</p>
         </div>
       </div>
