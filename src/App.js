@@ -10,9 +10,9 @@ import { Routes, Route, useParams } from 'react-router-dom';
 function App() {
 
   return (
-    <div className="App">
-      <div id='mainWrapper' className='h-full bg-[url("/src/assets/home/background-home-mobile.jpg")] bg-cover pt-6 pb-12 bg-no-repeat mix-blend-screen'>
-        <div id='mainContainer'>
+    <div className="App flex flex-col h-screen">
+      <div id='mainWrapper' className='flex justify-center h-auto grow bg-[url("/src/assets/home/background-home-mobile.jpg")] bg-cover pt-6 pb-12 bg-no-repeat mix-blend-screen'>
+        <div id='mainContainer' className='max-w-[375px] sm:max-w-[640px] md:max-w-[768px]'>
           <div id='headerWrapper' className='px-6'>
             <Header />
           </div>
