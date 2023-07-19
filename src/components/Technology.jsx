@@ -13,7 +13,7 @@ import Capsule from '../components/technology/Capsule'
 
 function Technology() {
 
-  const [theTech, setTheTech] = useState('')
+  const [theTech, setTheTech] = useState('') 
   const [theTechImage, setTechImage] = useState('')
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function Technology() {
     // Change background
     let mainWrapper = document.getElementById('mainWrapper')
     console.log(mainWrapper)
-    mainWrapper.style.backgroundImage = "url('https://s3.us-east-2.amazonaws.com/images.rughdesign.com/wp-content/uploads/background-technology-mobile.jpg')"
+    mainWrapper.classList.add('techBackground')
 
     tech = Array.from(tech)
     
@@ -77,32 +77,32 @@ function Technology() {
 
   return (
     <>
-        <div id="technologyContainer" className='mt-[34px]'>
-            <div id="technologyHeader" className='flex justify-center mb-8'>
-                <div id="technologyHeadNumber" className='text-white mr-[18px] font-["Barlow_Condensed"] text-base font-bold tracking-[2.7px] opacity-25'>
+        <div id="technologyContainer" className='mt-[34px] md:mt-16 md:flex md:flex-col'>
+            <div id="technologyHeader" className='flex justify-center mb-8 md:justify-start md:items-center md:pl-[15px] md:mb-[60px]'>
+                <div id="technologyHeadNumber" className='text-white mr-[18px] font-["Barlow_Condensed"] text-base font-bold tracking-[2.7px] opacity-25 md:text-xl md:tracking-[3.375px]'>
                     <p>03</p>
                 </div>
-                <div id="technologyHeadCopy" className='text-white font-["Barlow_Condensed" text-base font-normal tracking-[2.7px] uppercase'>
+                <div id="technologyHeadCopy" className='text-white font-["Barlow_Condensed" text-base font-normal tracking-[2.7px] uppercase md:text-xl md:tracking-[3.375px]'>
                     <p>Space Launch 101</p>
                 </div>
             </div>
             <div id="technologyImage">
-                <div id="launchImage" className='selectedTechImage w-full hidden justify-center items-center mb-[30px]'>
-                    <img src={LaunchImage} alt={Data.technology[0].name} className='w-full h-[170px]' />
+                <div id="launchImage" className='selectedTechImage w-full hidden justify-center items-center mb-[30px] md:mb-[56px]'>
+                    <img src={LaunchImage} alt={Data.technology[0].name} className='w-full h-[170px] md:h-[310px]' />
                 </div>
-                <div id="portImage" className='hidden w-full justify-center items-center mb-[30px]'>
-                    <img src={PortImage} alt={Data.technology[1].name} className='w-full h-[170px]' />
+                <div id="portImage" className='hidden w-full justify-center items-center mb-[30px] md:mb-[56px]'>
+                    <img src={PortImage} alt={Data.technology[1].name} className='w-full h-[170px] md:h-[310px]' />
                 </div>
-                <div id="capsuleImage" className='hidden w-full justify-center items-center mb-[30px]'>
-                    <img src={CapsuleImage} alt={Data.technology[2].name} className='w-full h-[170px]' />
+                <div id="capsuleImage" className='hidden w-full justify-center items-center mb-[30px] md:mb-[56px]'>
+                    <img src={CapsuleImage} alt={Data.technology[2].name} className='w-full h-[170px] md:h-[310px]' />
                 </div>
 
             </div>
-            <div id="techMenu" className='mb-[26px]'>
-                <ul className='flex justify-center font-["Bellefair"] text-base font-normal tracking-[1px]'>    
-                    <li id='launch' className='selectedTech tech w-10 h-10 text-white border border-white/[.25] rounded-[50%] text-center flex justify-center items-center mr-4'>1</li>
-                    <li id='port' className='tech w-10 h-10 text-white border border-white/[.25] rounded-[50%] text-center flex justify-center items-center mr-4'>2</li>
-                    <li id='capsule' className='tech w-10 h-10 text-white border border-white/[.25] rounded-[50%] text-center flex justify-center items-center'>3</li>
+            <div id="techMenu" className='mb-[26px] md:mb-11'>
+                <ul className='flex justify-center font-["Bellefair"] text-base font-normal tracking-[1px] md:text-2xl md:tracking-[1.5px]'>    
+                    <li id='launch' className='selectedTech tech w-10 h-10 text-white border border-white/[.25] rounded-[50%] text-center flex justify-center items-center mr-4 md:w-[60px] md:h-[60px]'>1</li>
+                    <li id='port' className='tech w-10 h-10 text-white border border-white/[.25] rounded-[50%] text-center flex justify-center items-center mr-4 md:w-[60px] md:h-[60px]'>2</li>
+                    <li id='capsule' className='tech w-10 h-10 text-white border border-white/[.25] rounded-[50%] text-center flex justify-center items-center md:w-[60px] md:h-[60px]'>3</li>
                 </ul>
             </div>
             <div id="launchWrapper" className='selectedTechCopy px-6'>

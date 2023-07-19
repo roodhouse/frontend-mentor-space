@@ -62,27 +62,24 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+The first thing I learned was how to solve the white space issue when using height: 100vh. This has been an issue for me with most projects I have done. 
 
-To see how you can add code snippets, see below:
+Here is the issue that height: 100vh creates:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+![](/src/assets/heightIssue.png)
+
+The fix is to use display flex, flex-direction column and height 100vh in the parent div. Then in the last child div use flex grow:1 and height auto.
+
+![](/src/assets/heightSolved.png)
+
+Here is the code: 
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+
+<div className="App flex flex-col h-screen">
+      <div id='mainWrapper' className='flex justify-center h-auto grow bg-[url("/src/assets/home/background-home-mobile.jpg")] bg-cover pt-6 pb-12 bg-no-repeat mix-blend-screen'>
+
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
