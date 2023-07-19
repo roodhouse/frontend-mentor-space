@@ -55,3 +55,22 @@
         justify-content: center;
     }
 }
+
+@media (min-width: 1280px) {
+    .destinationBackground {
+        background-image: url('https://s3.us-east-2.amazonaws.com/images.rughdesign.com/wp-content/uploads/background-destination-desktop.jpg');
+    }
+
+    /* .crewBackground {
+        background-image: url('https://s3.us-east-2.amazonaws.com/images.rughdesign.com/wp-content/uploads/background-crew-tablet.jpg');
+    }
+
+    .techBackground {
+        background-image: url('https://s3.us-east-2.amazonaws.com/images.rughdesign.com/wp-content/uploads/background-technology-tablet.jpg');
+    }
+
+    .selectedCopy {
+        display: flex;
+        justify-content: center;
+    } */
+}

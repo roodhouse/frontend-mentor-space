@@ -30,7 +30,7 @@ function Header() {
 
   return (
     <>
-    <div id="headerContainer" className='xl:flex xl:items-center'>
+    <div id="headerContainer" className='xl:flex xl:items-center xl:justify-between'>
       <div id="iconContainer" className='flex justify-between items-center'>
         <div id="logoWrapper" className='xl:mr-16'>
           <Logo />
@@ -39,7 +39,7 @@ function Header() {
           <Hamburger />
         </div>
       </div>
-      <div id="mainLine" className='hidden xl:block xl:w-[473px] xl:h-[1px] bg-white opacity-[0.2514851987361908]'/>
+      <div id="mainLine" className='hidden xl:block xl:w-[473px] xl:h-[1px] bg-white opacity-[0.2514851987361908] xl:absolute xl:left-[167px] xl:z-10'/>
       <div id="menuWrapper" className='hidden md:block'>
         <Menu />
       </div>
