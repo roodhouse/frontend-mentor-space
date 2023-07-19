@@ -1,0 +1,22 @@
+.selected {
+    color: white;
+    border-bottom: 3px solid white;
+}
+
+.selectedImage {
+    display: flex;
+}
+
+.selectedCrew {
+    opacity: 100;
+}
+
+.selectedCrewImage, .selectedTechImage {
+    display: flex;
+}
+
+.selectedTech {
+    border: rgba(255, 255, 255, 100);
+    background-color: white;
+    color: #0B0D17;
+}

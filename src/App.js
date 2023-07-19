@@ -1,30 +1,32 @@
+import React, { useState, useEffect } from 'react'
 import './App.css';
 import Header from './components/Header'
 import Destination from './components/Destination';
 import Home from './components/Home';
 import Crew from './components/Crew';
 import Technology from './components/Technology'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useParams } from 'react-router-dom';
 
 function App() {
+
   return (
-    <div className="App h-[667px]">
-      <div id='mainWrapper' className='h-full bg-[url("/src/assets/home/background-home-mobile.jpg")] px-6 pt-6 pb-12 bg-no-repeat'>
+    <div className="App">
+      <div id='mainWrapper' className='h-full bg-[url("/src/assets/home/background-home-mobile.jpg")] bg-cover pt-6 pb-12 bg-no-repeat mix-blend-screen'>
         <div id='mainContainer'>
-          <div id='headerWrapper' className='mb-[58px]'>
+          <div id='headerWrapper' className='px-6'>
             <Header />
           </div>
-          <div id='homeWrapper' className=''>
+          <div id='homeWrapper' className='px-6'>
             <Routes>
               <Route path='/' element={<Home />} />
             </Routes>
           </div>
-          <div id='destinationWrapper'>
+          <div id='destinationWrapper' className='px-6'>
             <Routes>
               <Route path='/destination' element={<Destination />} />
             </Routes>
           </div>
-          <div id='crewWrapper'>
+          <div id='crewWrapper' className='px-6'>
             <Routes>
               <Route path='/crew' element={<Crew />} />
             </Routes>

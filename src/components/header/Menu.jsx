@@ -4,7 +4,7 @@ import TheMenuClose from '../../assets/shared/icon-close.svg'
 function Menu() {
   return (
     <>
-        <div id="menuContainer" className='w-[254px] flex flex-col items-end bg-[rgba(255,255,255,0.04)] h-screen backdrop-blur-[40.774227142333984px] absolute top-0 right-0 pl-8'>
+        <div id="menuContainer" className='w-[254px] flex flex-col items-end bg-[rgba(255,255,255,0.04)] h-screen backdrop-blur-[40.774227142333984px] absolute top-0 right-0 pl-8 z-20'>
             <div id="closeIconContainer" className='pr-6 pt-8 mb-[65px]'>
                 <img src={TheMenuClose} alt="Close menu" />
             </div>
