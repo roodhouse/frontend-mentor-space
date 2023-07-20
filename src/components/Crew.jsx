@@ -71,12 +71,12 @@ function Crew() {
 
   return (
     <>
-        <div id="crewContainer" className='mt-[34px] md:mt-16 md:flex md:flex-col '>
+        <div id="crewContainer" className='mt-[34px] md:mt-16 md:flex md:flex-col xl:mt-[100px]'>
             <div id="crewHeader" className='flex justify-center mb-8 md:justify-start md:items-center md:pl-[15px] md:mb-[60px] md:order-1'>
-                <div id="crewHeadNumber" className='text-white mr-[18px] font-["Barlow_Condensed"] text-base font-bold tracking-[2.7px] opacity-25 md:text-xl md:tracking-[3.375px]'>
+                <div id="crewHeadNumber" className='text-white mr-[18px] font-["Barlow_Condensed"] text-base font-bold tracking-[2.7px] opacity-25 md:text-xl md:tracking-[3.375px] xl:text-[28px] xl:tracking-[4.725px]'>
                     <p>02</p>
                 </div>
-                <div id="crewHeadCopy" className='text-white font-["Barlow_Condensed" text-base font-normal tracking-[2.7px] uppercase md:text-xl md:tracking-[3.375px]'>
+                <div id="crewHeadCopy" className='text-white font-["Barlow_Condensed" text-base font-normal tracking-[2.7px] uppercase md:text-xl md:tracking-[3.375px] xl:text-[28px] xl:tracking-[4.725px]'>
                     <p>Meet your crew</p>
                 </div>
             </div>
