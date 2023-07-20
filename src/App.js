@@ -5,20 +5,13 @@ import Destination from './components/Destination';
 import Home from './components/Home';
 import Crew from './components/Crew';
 import Technology from './components/Technology'
-import { Routes, Route, useParams } from 'react-router-dom';
 
-// fix destination view
-// change moblie select menu
-// remove react router from index.js
-// add hover states
-// fixed select bar with js
 // add framer motion
 
 function App() {
 
   const [view, setView] = useState('home')
   const [exploreClicked, setExploreClicked] = useState(false)
-  console.log(exploreClicked)
 
   useEffect(() => {
     let mainWrapper = document.getElementById("mainWrapper");
@@ -39,19 +32,10 @@ function App() {
     let link = document.querySelectorAll(".link");
     let selectedNav = document.querySelector(".selectedNav");
     let selectedLink = document.querySelector(".selectedLink");
-    let explore = document.getElementById('exploreButton')
 
     nav = Array.from(nav);
     link = Array.from(link);
 
-    // explore.addEventListener('click', () => {
-    //   document.getElementById('homeWrapper').classList.remove('selectedNav')
-    //   document.getElementById('destinationWrapper').classList.add('selectedNav')
-    //   mainWrapper.classList.add('destinationWrapperBackground')
-    //   document.getElementById('linkhome').classList.remove('selectedLink')
-    //   document.getElementById('linkdestination').classList.add('selectedLink')
-    //   setExploreClicked(true)
-    // })
 
     link.forEach((hyper) => {
       hyper.addEventListener("click", (e) => {

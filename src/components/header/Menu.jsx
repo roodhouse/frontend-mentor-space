@@ -11,36 +11,28 @@ function Menu() {
             <div id="theMenu" className='w-full md:h-full'>
                 <ul className='flex flex-col md:flex-row md:h-full md:items-baseline md:justify-evenly'>
                     <li id='linkhome' className='selectedLink link mb-8 md:mb-0 md:h-full md:flex md:items-center cursor-pointer'>
-                        
                             <div id='homeLeft' className='flex xl:items-center'>
                                 <p className='mr-[11px] font-["Barlow_Condensed"] text-white text-base font-bold tracking-[2.7px] md:hidden xl:block'>00</p>
                                 <p className='font-["Barlow_Condensed"] text-white text-base font-normal tracking-[2.7px] md:text-sm md:tracking-[2.362px]'>HOME</p>
                             </div>
-                        
                     </li>
                     <li id='linkdestination' className='link mb-8 md:mb-0 md:h-full md:flex md:items-center cursor-pointer'>
-                        
                             <div id="destinationLeft" className='flex xl:items-center'>
                                 <p className='mr-[11px] font-["Barlow_Condensed"] text-white text-base font-bold tracking-[2.7px] md:hidden xl:block'>01</p>
                                 <p className='font-["Barlow_Condensed"] text-white text-base font-normal tracking-[2.7px] md:text-sm md:tracking-[2.362px]'>DESTINATION</p>
                             </div>
-                        
                     </li>
                     <li id='linkcrew' className='link mb-8 md:mb-0 md:h-full md:flex md:items-center cursor-pointer'>
-                       
                             <div id="crewLeft" className='flex xl:items-center'>
                                 <p className='mr-[11px] font-["Barlow_Condensed"] text-white text-base font-bold tracking-[2.7px] md:hidden xl:block'>02</p>
                                 <p className='font-["Barlow_Condensed"] text-white text-base font-normal tracking-[2.7px] md:text-sm md:tracking-[2.362px]'>CREW</p>
                             </div>
-                        
                     </li>
                     <li id='linktech' className='link md:h-full md:flex md:items-center cursor-pointer'>
-                        
                             <div id="techLeft" className='flex xl:items-center'>
                                 <p className='mr-[11px] font-["Barlow_Condensed"] text-white text-base font-bold tracking-[2.7px] md:hidden xl:block'>03</p>
                                 <p className='font-["Barlow_Condensed"] text-white text-base font-normal tracking-[2.7px] md:text-sm md:tracking-[2.362px]'>TECHNOLOGY</p>
                             </div>
-                        
                     </li>
                 </ul>
             </div>

@@ -21,10 +21,6 @@ function Destination() {
         let selectedPlanet = document.querySelector('.selected')
         let selectedPlanetCopy = document.querySelector('.selectedCopy')
         
-        // // Change background
-        // let mainWrapper = document.getElementById('mainWrapper')
-        // mainWrapper.classList.add('destinationBackground')
-
         planets = Array.from(planets)
         
         planets.forEach((planet)=> {
@@ -102,10 +98,10 @@ function Destination() {
                 <div id="destinationMenuCopy" className='xl:flex xl:flex-col xl:w-[445px] xl:items-start'>
                     <div id="destMenu" className='mb-5 md:mb-8'>
                         <ul className='flex justify-evenly font-["Barlow_Condensed"] text-base font-normal uppercase tracking-[2.7px] md:justify-center'>    
-                            <li id='moon' className='selected planet text-lightBlue h-[28px] md:mr-[35px] cursor-pointer'>Moon</li>
-                            <li id='mars' className='planet h-[28px] text-lightBlue md:mr-[35px] cursor-pointer'>Mars</li>
-                            <li id='europa' className='planet h-[28px] text-lightBlue md:mr-[35px] cursor-pointer'>Europa</li>
-                            <li id='titan' className='planet h-[28px] text-lightBlue cursor-pointer'>Titan</li> 
+                            <li id='moon' className='selected planet text-lightBlue h-[28px] md:mr-[35px] cursor-pointer hover:border-b-[3px] hover:border-b-white/50'>Moon</li>
+                            <li id='mars' className='planet h-[28px] text-lightBlue md:mr-[35px] cursor-pointer hover:border-b-[3px] hover:border-b-white/50'>Mars</li>
+                            <li id='europa' className='planet h-[28px] text-lightBlue md:mr-[35px] cursor-pointer hover:border-b-[3px] hover:border-b-white/50'>Europa</li>
+                            <li id='titan' className='planet h-[28px] text-lightBlue cursor-pointer hover:border-b-[3px] hover:border-b-white/50'>Titan</li> 
                         </ul>
                     </div>
                     <div id="moonWrapper" className='selectedCopy'>

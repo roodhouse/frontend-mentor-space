@@ -26,8 +26,12 @@
 }
 
 .selectedLink {
-    border-bottom: 3px solid white;
+    border-right: 3px solid white;
 }
+
+.link:hover {
+    border-right: 3px solid rgba(255, 255, 255, 0.5);
+} 
 
 .destinationWrapperBackground {
     background-image: url('https://s3.us-east-2.amazonaws.com/images.rughdesign.com/wp-content/uploads/background-destination-mobile.jpg');
@@ -58,6 +62,15 @@
     .selectedCopy {
         display: flex;
         justify-content: center;
+    }
+
+    .selectedLink {
+        border-bottom: 3px solid white;
+        border-right: 0;
+    }
+    .link:hover {
+        border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+        border-right: 0
     }
 }
 

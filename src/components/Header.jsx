@@ -16,6 +16,13 @@ function Header() {
     
   },[])
 
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      document.getElementById("theMenu").addEventListener('click', closeMenu)
+      
+  }
+  })
+
   function menuClick(e) {
     const menuWrapper = document.getElementById('menuWrapper')
     menuWrapper.style.display = 'block'
