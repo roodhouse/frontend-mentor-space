@@ -71,36 +71,36 @@ function Crew() {
 
   return (
     <>
-        <div id="crewContainer" className='mt-[34px] md:mt-16 md:flex md:flex-col '>
-            <div id="crewHeader" className='flex justify-center mb-8 md:justify-start md:items-center md:pl-[15px] md:mb-[60px] md:order-1'>
-                <div id="crewHeadNumber" className='text-white mr-[18px] font-["Barlow_Condensed"] text-base font-bold tracking-[2.7px] opacity-25 md:text-xl md:tracking-[3.375px]'>
+        <div id="crewContainer" className='mt-[34px] md:mt-16 md:flex md:flex-col xl:mt-[100px] xl:flex-wrap xl:h-[712px]'>
+            <div id="crewHeader" className='flex justify-center mb-8 md:justify-start md:items-center md:pl-[15px] md:mb-[60px] md:order-1 xl:mb-[154px]'>
+                <div id="crewHeadNumber" className='text-white mr-[18px] font-["Barlow_Condensed"] text-base font-bold tracking-[2.7px] opacity-25 md:text-xl md:tracking-[3.375px] xl:text-[28px] xl:tracking-[4.725px]'>
                     <p>02</p>
                 </div>
-                <div id="crewHeadCopy" className='text-white font-["Barlow_Condensed" text-base font-normal tracking-[2.7px] uppercase md:text-xl md:tracking-[3.375px]'>
+                <div id="crewHeadCopy" className='text-white font-["Barlow_Condensed" text-base font-normal tracking-[2.7px] uppercase md:text-xl md:tracking-[3.375px] xl:text-[28px] xl:tracking-[4.725px]'>
                     <p>Meet your crew</p>
                 </div>
             </div>
             <div id="crewImage" className='md:order-4'>
-                <div id="commanderImage" className='selectedCrewImage hidden justify-center items-center md:mt-[6px]'>
-                    <img src={CommanderImage} alt={Data.crew[0].name} className='w-[177px] h-[222px] md:w-[456px] md:h-[532px]' />
+                <div id="commanderImage" className='selectedCrewImage hidden justify-center items-center md:mt-[6px] xl:mt-0 xl:ml-[141px]'>
+                    <img src={CommanderImage} alt={Data.crew[0].name} className='w-[177px] h-[222px] md:w-[456px] md:h-[532px] xl:w-[568px] xl:h-[712px]' />
                 </div>
-                <div id="missionSpecialistImage" className='hidden justify-center items-center'>
-                    <img src={MissionSpecialistImage} alt={Data.crew[1].name} className='w-[154px] h-[222px] md:w-[368px] md:h-[532px]' />
+                <div id="missionSpecialistImage" className='hidden justify-center items-center xl:mt-[10px] xl:ml-10'>
+                    <img src={MissionSpecialistImage} alt={Data.crew[1].name} className='w-[154px] h-[222px] md:w-[368px] md:h-[532px] xl:w-[453px] xl:h-[654px] ' />
                 </div>
-                <div id="pilotImage" className='hidden justify-center items-center'>
-                    <img src={PilotImage} alt={Data.crew[2].name} className='w-[181px] h-[222px] md:w-[433px] md:h-[532px]' />
+                <div id="pilotImage" className='hidden justify-center items-center xl:ml-[180px]'>
+                    <img src={PilotImage} alt={Data.crew[2].name} className='w-[181px] h-[222px] md:w-[433px] md:h-[532px] xl:w-[554px] xl:h-[681px]' />
                 </div>
-                <div id="flightEngineerImage" className='hidden justify-center items-center'>
-                    <img src={FlightEngineerImage} alt={Data.crew[3].name} className='w-[226px] h-[222px] md:w-[539px] md:h-[532px]' />
+                <div id="flightEngineerImage" className='hidden justify-center items-center xl:mt-[57px] xl:ml-[52px]'>
+                    <img src={FlightEngineerImage} alt={Data.crew[3].name} className='w-[226px] h-[222px] md:w-[539px] md:h-[532px] xl:w-[615px] xl:h-[607px]' />
                 </div>
             </div>
             <div id="crewBreakLine" className='w-full h-[1px] bg-[#383B4B] mb-8 md:hidden'/>
             <div id="crewMenu" className='mb-5 md:order-3 md:mb-10'>
-                <ul className='flex justify-center font-["Barlow_Condensed"] text-base font-normal uppercase tracking-[2.7px]'>    
-                    <li id='commander' className='selectedCrew crew w-[10px] h-[10px] bg-white rounded-[50%] opacity-[0.174363] mr-4'></li>
-                    <li id='missionSpecialist' className='crew w-[10px] h-[10px] bg-white rounded-[50%] opacity-[0.174363] mr-4'></li>
-                    <li id='pilot' className='crew w-[10px] h-[10px] bg-white rounded-[50%] opacity-[0.174363] mr-4'></li>
-                    <li id='flightEngineer' className='crew w-[10px] h-[10px] bg-white rounded-[50%] opacity-[0.174363]'></li>
+                <ul className='flex justify-center font-["Barlow_Condensed"] text-base font-normal uppercase tracking-[2.7px] xl:justify-start'>    
+                    <li id='commander' className='selectedCrew crew w-[10px] h-[10px] bg-white rounded-[50%] opacity-[0.174363] mr-4 xl:w-[15px] xl:h-[15px] cursor-pointer'></li>
+                    <li id='missionSpecialist' className='crew w-[10px] h-[10px] bg-white rounded-[50%] opacity-[0.174363] mr-4 xl:w-[15px] xl:h-[15px] cursor-pointer'></li>
+                    <li id='pilot' className='crew w-[10px] h-[10px] bg-white rounded-[50%] opacity-[0.174363] mr-4 xl:w-[15px] xl:h-[15px] cursor-pointer'></li>
+                    <li id='flightEngineer' className='crew w-[10px] h-[10px] bg-white rounded-[50%] opacity-[0.174363] xl:w-[15px] xl:h-[15px] cursor-pointer'></li>
                     
                 </ul>
             </div>
