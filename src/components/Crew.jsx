@@ -71,8 +71,8 @@ function Crew() {
 
   return (
     <>
-        <div id="crewContainer" className='mt-[34px] md:mt-16 md:flex md:flex-col xl:mt-[100px]'>
-            <div id="crewHeader" className='flex justify-center mb-8 md:justify-start md:items-center md:pl-[15px] md:mb-[60px] md:order-1'>
+        <div id="crewContainer" className='mt-[34px] md:mt-16 md:flex md:flex-col xl:mt-[100px] xl:flex-wrap xl:h-[712px]'>
+            <div id="crewHeader" className='flex justify-center mb-8 md:justify-start md:items-center md:pl-[15px] md:mb-[60px] md:order-1 xl:mb-[154px]'>
                 <div id="crewHeadNumber" className='text-white mr-[18px] font-["Barlow_Condensed"] text-base font-bold tracking-[2.7px] opacity-25 md:text-xl md:tracking-[3.375px] xl:text-[28px] xl:tracking-[4.725px]'>
                     <p>02</p>
                 </div>
@@ -81,8 +81,8 @@ function Crew() {
                 </div>
             </div>
             <div id="crewImage" className='md:order-4'>
-                <div id="commanderImage" className='selectedCrewImage hidden justify-center items-center md:mt-[6px]'>
-                    <img src={CommanderImage} alt={Data.crew[0].name} className='w-[177px] h-[222px] md:w-[456px] md:h-[532px]' />
+                <div id="commanderImage" className='selectedCrewImage hidden justify-center items-center md:mt-[6px] xl:mt-0'>
+                    <img src={CommanderImage} alt={Data.crew[0].name} className='w-[177px] h-[222px] md:w-[456px] md:h-[532px] xl:w-[568px] xl:h-[712px]' />
                 </div>
                 <div id="missionSpecialistImage" className='hidden justify-center items-center'>
                     <img src={MissionSpecialistImage} alt={Data.crew[1].name} className='w-[154px] h-[222px] md:w-[368px] md:h-[532px]' />
