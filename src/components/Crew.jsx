@@ -19,10 +19,6 @@ function Crew() {
       let selectedCrew = document.querySelector('.selectedCrew')
       let selectedCrewCopy = document.querySelector('.selectedCrewCopy')
 
-    // Change background
-    // let mainWrapper = document.getElementById('mainWrapper')
-    // mainWrapper.classList.add('crewBackground')
-
     crew = Array.from(crew)
         
         crew.forEach((person)=> {
@@ -96,10 +92,10 @@ function Crew() {
             <div id="crewBreakLine" className='w-full h-[1px] bg-[#383B4B] mb-8 md:hidden'/>
             <div id="crewMenu" className='mb-5 md:order-3 md:mb-10'>
                 <ul className='flex justify-center font-["Barlow_Condensed"] text-base font-normal uppercase tracking-[2.7px] xl:justify-start'>    
-                    <li id='commander' className='selectedCrew crew w-[10px] h-[10px] bg-white rounded-[50%] opacity-[0.174363] mr-4 xl:w-[15px] xl:h-[15px] cursor-pointer'></li>
-                    <li id='missionSpecialist' className='crew w-[10px] h-[10px] bg-white rounded-[50%] opacity-[0.174363] mr-4 xl:w-[15px] xl:h-[15px] cursor-pointer'></li>
-                    <li id='pilot' className='crew w-[10px] h-[10px] bg-white rounded-[50%] opacity-[0.174363] mr-4 xl:w-[15px] xl:h-[15px] cursor-pointer'></li>
-                    <li id='flightEngineer' className='crew w-[10px] h-[10px] bg-white rounded-[50%] opacity-[0.174363] xl:w-[15px] xl:h-[15px] cursor-pointer'></li>
+                    <li id='commander' className='selectedCrew crew w-[10px] h-[10px] bg-white rounded-[50%] opacity-[0.174363] mr-4 xl:w-[15px] xl:h-[15px] cursor-pointer hover:bg-white/50'></li>
+                    <li id='missionSpecialist' className='crew w-[10px] h-[10px] bg-white rounded-[50%] opacity-[0.174363] mr-4 xl:w-[15px] xl:h-[15px] cursor-pointer hover:bg-white/50'></li>
+                    <li id='pilot' className='crew w-[10px] h-[10px] bg-white rounded-[50%] opacity-[0.174363] mr-4 xl:w-[15px] xl:h-[15px] cursor-pointer hover:bg-white/50'></li>
+                    <li id='flightEngineer' className='crew w-[10px] h-[10px] bg-white rounded-[50%] opacity-[0.174363] xl:w-[15px] xl:h-[15px] cursor-pointer hover:bg-white/50'></li>
                     
                 </ul>
             </div>

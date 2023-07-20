@@ -25,11 +25,6 @@ function Technology() {
     let selectedTech = document.querySelector('.selectedTech')
     let selectedTechCopy = document.querySelector('.selectedTechCopy')
     
-    // Change background
-    // let mainWrapper = document.getElementById('mainWrapper')
-    // console.log(mainWrapper)
-    // mainWrapper.classList.add('techBackground')
-
     tech = Array.from(tech)
     
     tech.forEach((technology)=> {
@@ -108,9 +103,9 @@ function Technology() {
                 <div id="techMenuCopy" className='xl:flex'>
                     <div id="techMenu" className='mb-[26px] md:mb-11 xl:order-1 xl:mt-[111px] xl:mr-[80px]'>
                         <ul className='flex justify-center font-["Bellefair"] text-base font-normal tracking-[1px] md:text-2xl md:tracking-[1.5px] xl:flex-col xl:text-[32px] xl:tracking-[2px]'>    
-                            <li id='launch' className='selectedTech tech w-10 h-10 text-white border border-white/[.25] rounded-[50%] text-center flex justify-center items-center mr-4 md:w-[60px] md:h-[60px] xl:w-[80px] xl:h-[80px] xl:mb-8 cursor-pointer'>1</li>
-                            <li id='port' className='tech w-10 h-10 text-white border border-white/[.25] rounded-[50%] text-center flex justify-center items-center mr-4 md:w-[60px] md:h-[60px] xl:w-[80px] xl:h-[80px] xl:mb-8 cursor-pointer'>2</li>
-                            <li id='capsule' className='tech w-10 h-10 text-white border border-white/[.25] rounded-[50%] text-center flex justify-center items-center md:w-[60px] md:h-[60px] xl:w-[80px] xl:h-[80px] cursor-pointer'>3</li>
+                            <li id='launch' className='selectedTech tech w-10 h-10 text-white border border-white/[.25] rounded-[50%] text-center flex justify-center items-center mr-4 md:w-[60px] md:h-[60px] xl:w-[80px] xl:h-[80px] xl:mb-8 cursor-pointer hover:border-white'>1</li>
+                            <li id='port' className='tech w-10 h-10 text-white border border-white/[.25] rounded-[50%] text-center flex justify-center items-center mr-4 md:w-[60px] md:h-[60px] xl:w-[80px] xl:h-[80px] xl:mb-8 cursor-pointer hover:border-white'>2</li>
+                            <li id='capsule' className='tech w-10 h-10 text-white border border-white/[.25] rounded-[50%] text-center flex justify-center items-center md:w-[60px] md:h-[60px] xl:w-[80px] xl:h-[80px] cursor-pointer hover:border-white'>3</li>
                         </ul>
                     </div>
                     <div id="launchWrapper" className='selectedTechCopy px-6 xl:order-2 xl:mt-[111px] xl:px-0'>
