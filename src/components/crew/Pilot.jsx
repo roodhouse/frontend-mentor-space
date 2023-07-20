@@ -4,7 +4,7 @@ import Data from '../../data.json'
 function Pilot() {
   return (
     <>
-      <div id="pilotContainer" className='md:flex md:flex-col md:justify-center md:items-center md:mb-10 xl:items-start xl:mb-[120px]'>
+      <div id="pilotContainer" className='md:flex md:flex-col md:justify-center md:items-center md:mb-10 xl:items-start xl:mb-[88px]'>
         <div id="pilotRole" className='mb-2 text-white text-center font-["Bellefair"] text-base font-normal uppercase opacity-[0.4951259195804596] md:text-2xl xl:text-[32px] xl:mb-[15px]'>
           <p>{Data.crew[2].role}</p>
         </div>

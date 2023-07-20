@@ -35,7 +35,7 @@ function App() {
               <Route path='/crew' element={<Crew />} />
             </Routes>
           </div>
-          <div id='technologyWrapper'>
+          <div id='technologyWrapper' className='xl:pl-[165px] xl:pr-0'>
             <Routes>
               <Route path='/technology' element={<Technology />} />
             </Routes>
