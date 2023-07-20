@@ -7,11 +7,85 @@ import Crew from './components/Crew';
 import Technology from './components/Technology'
 import { Routes, Route, useParams } from 'react-router-dom';
 
-// finish full view
+// fix destination view
+// change moblie select menu
+// remove react router from index.js
+// add hover states
 // fixed select bar with js
 // add framer motion
 
 function App() {
+
+  const [view, setView] = useState('home')
+  const [exploreClicked, setExploreClicked] = useState(false)
+  console.log(exploreClicked)
+
+  useEffect(() => {
+    let mainWrapper = document.getElementById("mainWrapper");
+    let explore = document.getElementById('exploreButton')
+    explore.addEventListener('click', () => {
+      document.getElementById('homeWrapper').classList.remove('selectedNav')
+      document.getElementById('destinationWrapper').classList.add('selectedNav')
+      mainWrapper.classList.add('destinationWrapperBackground')
+      document.getElementById('linkhome').classList.remove('selectedLink')
+      document.getElementById('linkdestination').classList.add('selectedLink')
+      setExploreClicked(true)
+    })
+  })
+
+  useEffect(() => {
+    let mainWrapper = document.getElementById("mainWrapper");
+    let nav = document.querySelectorAll(".nav");
+    let link = document.querySelectorAll(".link");
+    let selectedNav = document.querySelector(".selectedNav");
+    let selectedLink = document.querySelector(".selectedLink");
+    let explore = document.getElementById('exploreButton')
+
+    nav = Array.from(nav);
+    link = Array.from(link);
+
+    // explore.addEventListener('click', () => {
+    //   document.getElementById('homeWrapper').classList.remove('selectedNav')
+    //   document.getElementById('destinationWrapper').classList.add('selectedNav')
+    //   mainWrapper.classList.add('destinationWrapperBackground')
+    //   document.getElementById('linkhome').classList.remove('selectedLink')
+    //   document.getElementById('linkdestination').classList.add('selectedLink')
+    //   setExploreClicked(true)
+    // })
+
+    link.forEach((hyper) => {
+      hyper.addEventListener("click", (e) => {
+        if (!exploreClicked) {
+            document.getElementById('destinationWrapper').classList.remove('selectedNav')
+            document.getElementById('linkdestination').classList.remove('selectedLink')
+            mainWrapper.classList.remove('destinationWrapperBackground')
+
+          console.log('x plore has been clicked')
+        }
+        let setLink = hyper.id.slice(4);
+        let newView = setLink;
+        setLink = setLink + "Wrapper";
+        setLink = document.getElementById(setLink);
+        mainWrapper.classList.remove(selectedNav.id + "Background");
+        selectedNav.classList.remove("selectedNav");
+        setLink.classList.add("selectedNav");
+        console.log(setLink.id);
+        mainWrapper.classList.add(setLink.id + "Background");
+        selectedNav = setLink;
+
+        selectedLink.classList.remove("selectedLink");
+        hyper.classList.add("selectedLink");
+        selectedLink = hyper;
+
+        nav.forEach((place) => {
+          console.log(place);
+          if (place.classList.contains("selectedNav")) {
+            mainWrapper.classList.add(place.id + "Background");
+          }
+        });
+      });
+    });
+  }, []);
 
   return (
     <div className="App flex flex-col h-screen">
@@ -20,25 +94,17 @@ function App() {
           <div id='headerWrapper' className='px-6 md:pl-[39px] md:pr-0 xl:pl-[55px]'>
             <Header />
           </div>
-          <div id='homeWrapper' className='px-6 xl:px-[165px]'>
-            <Routes>
-              <Route path='/' element={<Home />} />
-            </Routes>
+          <div id='homeWrapper' className='selectedNav hidden nav px-6 xl:px-[165px]'>
+            <Home />
           </div>
-          <div id='destinationWrapper' className='px-6 xl:px-[165px]'>
-            <Routes>
-              <Route path='/destination' element={<Destination />} />
-            </Routes>
+          <div id='destinationWrapper' className='nav hidden px-6 xl:px-[165px]'>
+            <Destination />
           </div>
-          <div id='crewWrapper' className='px-6 xl:px-[165px]'>
-            <Routes>
-              <Route path='/crew' element={<Crew />} />
-            </Routes>
+          <div id='crewWrapper' className='nav hidden px-6 xl:px-[165px]'>
+           <Crew />
           </div>
-          <div id='technologyWrapper' className='xl:pl-[165px] xl:pr-0'>
-            <Routes>
-              <Route path='/technology' element={<Technology />} />
-            </Routes>
+          <div id='techWrapper' className='nav hidden xl:pl-[165px] xl:pr-0'>
+            <Technology />
           </div>
 
         </div>

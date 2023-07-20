@@ -10,37 +10,37 @@ function Menu() {
             </div>
             <div id="theMenu" className='w-full md:h-full'>
                 <ul className='flex flex-col md:flex-row md:h-full md:items-baseline md:justify-evenly'>
-                    <li className='selectedLink mb-8 md:mb-0 md:h-full md:flex md:items-center'>
-                        <a href="/" className='text-white flex justify-between items-center h-[31px] hover:border-r-4 hover:border-r-white md:hover:border-r-0'>
+                    <li id='linkhome' className='selectedLink link mb-8 md:mb-0 md:h-full md:flex md:items-center cursor-pointer'>
+                        
                             <div id='homeLeft' className='flex xl:items-center'>
                                 <p className='mr-[11px] font-["Barlow_Condensed"] text-white text-base font-bold tracking-[2.7px] md:hidden xl:block'>00</p>
                                 <p className='font-["Barlow_Condensed"] text-white text-base font-normal tracking-[2.7px] md:text-sm md:tracking-[2.362px]'>HOME</p>
                             </div>
-                        </a>
+                        
                     </li>
-                    <li className='mb-8 md:mb-0 md:h-full md:flex md:items-center'>
-                        <a href="destination" className='text-white flex justify-between items-center h-[31px] hover:border-r-4 hover:border-r-white md:hover:border-r-0'>
+                    <li id='linkdestination' className='link mb-8 md:mb-0 md:h-full md:flex md:items-center cursor-pointer'>
+                        
                             <div id="destinationLeft" className='flex xl:items-center'>
                                 <p className='mr-[11px] font-["Barlow_Condensed"] text-white text-base font-bold tracking-[2.7px] md:hidden xl:block'>01</p>
                                 <p className='font-["Barlow_Condensed"] text-white text-base font-normal tracking-[2.7px] md:text-sm md:tracking-[2.362px]'>DESTINATION</p>
                             </div>
-                        </a>
+                        
                     </li>
-                    <li className='mb-8 md:mb-0 md:h-full md:flex md:items-center'>
-                        <a href="crew" className='text-white flex justify-between items-center h-[31px] hover:border-r-4 hover:border-r-white md:hover:border-r-0'>
+                    <li id='linkcrew' className='link mb-8 md:mb-0 md:h-full md:flex md:items-center cursor-pointer'>
+                       
                             <div id="crewLeft" className='flex xl:items-center'>
                                 <p className='mr-[11px] font-["Barlow_Condensed"] text-white text-base font-bold tracking-[2.7px] md:hidden xl:block'>02</p>
                                 <p className='font-["Barlow_Condensed"] text-white text-base font-normal tracking-[2.7px] md:text-sm md:tracking-[2.362px]'>CREW</p>
                             </div>
-                        </a>
+                        
                     </li>
-                    <li className=' md:h-full md:flex md:items-center'>
-                        <a href="technology" className='text-white flex justify-between items-center h-[31px] hover:border-r-4 hover:border-r-white md:hover:border-r-0'>
+                    <li id='linktech' className='link md:h-full md:flex md:items-center cursor-pointer'>
+                        
                             <div id="techLeft" className='flex xl:items-center'>
                                 <p className='mr-[11px] font-["Barlow_Condensed"] text-white text-base font-bold tracking-[2.7px] md:hidden xl:block'>03</p>
                                 <p className='font-["Barlow_Condensed"] text-white text-base font-normal tracking-[2.7px] md:text-sm md:tracking-[2.362px]'>TECHNOLOGY</p>
                             </div>
-                        </a>
+                        
                     </li>
                 </ul>
             </div>
