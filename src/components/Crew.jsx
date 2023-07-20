@@ -16,13 +16,12 @@ function Crew() {
   useEffect(() => {
       let crew = document.querySelectorAll('.crew')
       let currentSelectedCrewImage = document.querySelector('.selectedCrewImage')
-      console.log(currentSelectedCrewImage)
       let selectedCrew = document.querySelector('.selectedCrew')
       let selectedCrewCopy = document.querySelector('.selectedCrewCopy')
 
     // Change background
-    let mainWrapper = document.getElementById('mainWrapper')
-    mainWrapper.classList.add('crewBackground')
+    // let mainWrapper = document.getElementById('mainWrapper')
+    // mainWrapper.classList.add('crewBackground')
 
     crew = Array.from(crew)
         

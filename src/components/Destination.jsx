@@ -21,9 +21,9 @@ function Destination() {
         let selectedPlanet = document.querySelector('.selected')
         let selectedPlanetCopy = document.querySelector('.selectedCopy')
         
-        // Change background
-        let mainWrapper = document.getElementById('mainWrapper')
-        mainWrapper.classList.add('destinationBackground')
+        // // Change background
+        // let mainWrapper = document.getElementById('mainWrapper')
+        // mainWrapper.classList.add('destinationBackground')
 
         planets = Array.from(planets)
         
@@ -83,7 +83,7 @@ function Destination() {
                     <p>Pick your destination</p>
                 </div>
             </div>
-            <div id="destinationImageMenuCopy" className='flex'>
+            <div id="destinationImageMenuCopy" className='xl:flex'>
                 <div id="destinationImage" className='xl:mr-[157px] xl:pl-[65px]'>
                     <div id="moonImage" className='selectedImage w-full h-[259px] hidden justify-center items-center mb-[30px] md:h-[457px] md:mb-[54px] xl:h-[445px]'>
                         <img src={MoonImage} alt={Data.destinations[0].name} className='w-[259px] h-[259px] md:w-[457px] md:h-[457px] xl:w-[445px] xl:h-[445px]' />

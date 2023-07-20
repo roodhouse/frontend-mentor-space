@@ -26,9 +26,9 @@ function Technology() {
     let selectedTechCopy = document.querySelector('.selectedTechCopy')
     
     // Change background
-    let mainWrapper = document.getElementById('mainWrapper')
-    console.log(mainWrapper)
-    mainWrapper.classList.add('techBackground')
+    // let mainWrapper = document.getElementById('mainWrapper')
+    // console.log(mainWrapper)
+    // mainWrapper.classList.add('techBackground')
 
     tech = Array.from(tech)
     
