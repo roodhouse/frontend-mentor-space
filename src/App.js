@@ -6,6 +6,8 @@ import Home from './components/Home';
 import Crew from './components/Crew';
 import Technology from './components/Technology'
 
+// height still an issue, safari and mobile views... 
+
 function App() {
 
   const [view, setView] = useState('home')
