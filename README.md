@@ -77,7 +77,7 @@ Here is the code:
       <div id='mainWrapper' className='flex justify-center h-auto grow bg-[url("/src/assets/home/background-home-mobile.jpg")] bg-cover pt-6 pb-12 bg-no-repeat mix-blend-screen'>
 
 ```
-... well, fast forward a few days... the above was not the solution. It helped but I spent a few hours more customizing a javascript function to elminate the white space on all screen sizes. I think I have the solution now.
+... well, fast forward a few days... and the above was not the solution. It helped, but I spent a few hours more customizing a javascript function to elminate the white space on all screen sizes. I think I have the solution now.
 
 ```js
 useEffect(()=>{
