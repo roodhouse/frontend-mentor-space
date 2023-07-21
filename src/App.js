@@ -6,34 +6,33 @@ import Home from './components/Home';
 import Crew from './components/Crew';
 import Technology from './components/Technology'
 
-// height still an issue, safari and mobile views... 
-// fix click of explore button height issue
-// fix main page height issue
-
 function App() {
 
   const [view, setView] = useState('home')
   const [exploreClicked, setExploreClicked] = useState(false)
 
-  // useEffect(() => {
-  //   function calculateBodyHeight() {
-  //     let mainWrapper = document.getElementById("mainWrapper");
-  //     let selectedNav = document.querySelector(".selectedNav");
-      
-      
-  //     var contentHeight = document.querySelector('.App').clientHeight;
-  //     var bodyHeight = contentHeight + 20; // Add 20px for padding
-  //     document.getElementById('mainWrapper').style.height = bodyHeight + 'px';
-  //   }
-    
-  //   window.addEventListener('resize', calculateBodyHeight);
-    
-  //   calculateBodyHeight();
-  // },[])
+  useEffect(()=>{
+    // change the height
+    let mainWrapper = document.getElementById("mainWrapper"); 
+    let appOriginalHeight = document.getElementById('mainApp').clientHeight
+    let mainWrapperHeight = mainWrapper.clientHeight
+    console.log(appOriginalHeight)
+    console.log(mainWrapperHeight)
+    if (appOriginalHeight < mainWrapperHeight) {
+     console.log('app O is less')
+     let difference = mainWrapperHeight - appOriginalHeight
+     console.log(difference)
+     document.getElementById('mainApp').style.height = appOriginalHeight + difference + 'px'
+    } else if (appOriginalHeight >= mainWrapperHeight) {
+     console.log('main O is less')
+    }
+  },[])
 
+  // when explore button is pushed
   useEffect(() => {
     let mainWrapper = document.getElementById("mainWrapper");
     let explore = document.getElementById('exploreButton')
+    let appOriginalHeight = document.getElementById('mainApp').clientHeight
     explore.addEventListener('click', () => {
       document.getElementById('homeWrapper').classList.remove('selectedNav')
       document.getElementById('destinationWrapper').classList.add('selectedNav')
@@ -41,6 +40,20 @@ function App() {
       document.getElementById('linkhome').classList.remove('selectedLink')
       document.getElementById('linkdestination').classList.add('selectedLink')
       setExploreClicked(true)
+
+      // change the height
+      let mainWrapperHeight = mainWrapper.clientHeight
+       console.log(appOriginalHeight)
+       console.log(mainWrapperHeight)
+       if (appOriginalHeight < mainWrapperHeight) {
+        console.log('app O is less')
+        let difference = mainWrapperHeight - appOriginalHeight
+        console.log(difference)
+        document.getElementById('mainApp').style.height = appOriginalHeight + difference + 'px'
+       } else if (appOriginalHeight >= mainWrapperHeight) {
+        console.log('main O is less')
+       }
+
     })
   })
 
@@ -101,7 +114,7 @@ function App() {
 
   return (
     <div id='mainApp' className="App flex flex-col h-screen bg-[#000]">
-      <div id='mainWrapper' className='flex justify-center h-auto grow bg-[url("/src/assets/home/background-home-mobile.jpg")] bg-cover pt-6 pb-12 bg-no-repeat mix-blend-screen md:bg-[url("/src/assets/home/background-home-tablet.jpg")] md:pb-0 xl:bg-[url("/src/assets/home/background-home-desktop.jpg")] xl:pt-10'>
+      <div id='mainWrapper' className='flex justify-center h-auto grow bg-[url("/src/assets/home/background-home-mobile.jpg")] bg-cover pt-6 pb-12 bg-no-repeat mix-blend-screen md:bg-[url("/src/assets/home/background-home-tablet.jpg")] xl:bg-[url("/src/assets/home/background-home-desktop.jpg")] xl:pt-10'>
         <div id='mainContainer' className='max-w-[375px] sm:max-w-[640px] md:max-w-[768px] md:w-full lg:max-w-[1024px] xl:max-w-[100%] xl:w-full '>
           <div id='headerWrapper' className='px-6 md:pl-[39px] md:pr-0 xl:pl-[55px]'>
             <Header />
