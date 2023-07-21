@@ -6,16 +6,33 @@ import Home from './components/Home';
 import Crew from './components/Crew';
 import Technology from './components/Technology'
 
-// height still an issue, safari and mobile views... 
-
 function App() {
 
   const [view, setView] = useState('home')
   const [exploreClicked, setExploreClicked] = useState(false)
 
+  useEffect(()=>{
+    // change the height
+    let mainWrapper = document.getElementById("mainWrapper"); 
+    let appOriginalHeight = document.getElementById('mainApp').clientHeight
+    let mainWrapperHeight = mainWrapper.clientHeight
+    console.log(appOriginalHeight)
+    console.log(mainWrapperHeight)
+    if (appOriginalHeight < mainWrapperHeight) {
+     console.log('app O is less')
+     let difference = mainWrapperHeight - appOriginalHeight
+     console.log(difference)
+     document.getElementById('mainApp').style.height = appOriginalHeight + difference + 'px'
+    } else if (appOriginalHeight >= mainWrapperHeight) {
+     console.log('main O is less')
+    }
+  },[])
+
+  // when explore button is pushed
   useEffect(() => {
     let mainWrapper = document.getElementById("mainWrapper");
     let explore = document.getElementById('exploreButton')
+    let appOriginalHeight = document.getElementById('mainApp').clientHeight
     explore.addEventListener('click', () => {
       document.getElementById('homeWrapper').classList.remove('selectedNav')
       document.getElementById('destinationWrapper').classList.add('selectedNav')
@@ -23,6 +40,20 @@ function App() {
       document.getElementById('linkhome').classList.remove('selectedLink')
       document.getElementById('linkdestination').classList.add('selectedLink')
       setExploreClicked(true)
+
+      // change the height
+      let mainWrapperHeight = mainWrapper.clientHeight
+       console.log(appOriginalHeight)
+       console.log(mainWrapperHeight)
+       if (appOriginalHeight < mainWrapperHeight) {
+        console.log('app O is less')
+        let difference = mainWrapperHeight - appOriginalHeight
+        console.log(difference)
+        document.getElementById('mainApp').style.height = appOriginalHeight + difference + 'px'
+       } else if (appOriginalHeight >= mainWrapperHeight) {
+        console.log('main O is less')
+       }
+
     })
   })
 
@@ -32,6 +63,7 @@ function App() {
     let link = document.querySelectorAll(".link");
     let selectedNav = document.querySelector(".selectedNav");
     let selectedLink = document.querySelector(".selectedLink");
+    let appOriginalHeight = document.getElementById('mainApp').clientHeight
 
     nav = Array.from(nav);
     link = Array.from(link);
@@ -43,8 +75,6 @@ function App() {
             document.getElementById('destinationWrapper').classList.remove('selectedNav')
             document.getElementById('linkdestination').classList.remove('selectedLink')
             mainWrapper.classList.remove('destinationWrapperBackground')
-
-          console.log('x plore has been clicked')
         }
         let setLink = hyper.id.slice(4);
         let newView = setLink;
@@ -53,16 +83,27 @@ function App() {
         mainWrapper.classList.remove(selectedNav.id + "Background");
         selectedNav.classList.remove("selectedNav");
         setLink.classList.add("selectedNav");
-        console.log(setLink.id);
         mainWrapper.classList.add(setLink.id + "Background");
         selectedNav = setLink;
+        
+       // adjust height
+       let mainWrapperHeight = mainWrapper.clientHeight
+       console.log(appOriginalHeight)
+       console.log(mainWrapperHeight)
+       if (appOriginalHeight < mainWrapperHeight) {
+        console.log('app O is less')
+        let difference = mainWrapperHeight - appOriginalHeight
+        console.log(difference)
+        document.getElementById('mainApp').style.height = appOriginalHeight + difference + 'px'
+       } else if (appOriginalHeight >= mainWrapperHeight) {
+        console.log('main O is less')
+       }
 
         selectedLink.classList.remove("selectedLink");
         hyper.classList.add("selectedLink");
         selectedLink = hyper;
 
         nav.forEach((place) => {
-          console.log(place);
           if (place.classList.contains("selectedNav")) {
             mainWrapper.classList.add(place.id + "Background");
           }
@@ -72,8 +113,8 @@ function App() {
   }, []);
 
   return (
-    <div className="App flex flex-col h-screen bg-[#000]">
-      <div id='mainWrapper' className='flex justify-center h-auto grow bg-[url("/src/assets/home/background-home-mobile.jpg")] bg-cover pt-6 pb-12 bg-no-repeat mix-blend-screen md:bg-[url("/src/assets/home/background-home-tablet.jpg")] md:pb-0 xl:bg-[url("/src/assets/home/background-home-desktop.jpg")] xl:pt-10'>
+    <div id='mainApp' className="App flex flex-col h-screen bg-[#000]">
+      <div id='mainWrapper' className='flex justify-center h-auto grow bg-[url("/src/assets/home/background-home-mobile.jpg")] bg-cover pt-6 pb-12 bg-no-repeat mix-blend-screen md:bg-[url("/src/assets/home/background-home-tablet.jpg")] xl:bg-[url("/src/assets/home/background-home-desktop.jpg")] xl:pt-10'>
         <div id='mainContainer' className='max-w-[375px] sm:max-w-[640px] md:max-w-[768px] md:w-full lg:max-w-[1024px] xl:max-w-[100%] xl:w-full '>
           <div id='headerWrapper' className='px-6 md:pl-[39px] md:pr-0 xl:pl-[55px]'>
             <Header />
