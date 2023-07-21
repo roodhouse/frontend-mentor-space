@@ -16,12 +16,9 @@ function App() {
     let mainWrapper = document.getElementById("mainWrapper"); 
     let appOriginalHeight = document.getElementById('mainApp').clientHeight
     let mainWrapperHeight = mainWrapper.clientHeight
-    console.log(appOriginalHeight)
-    console.log(mainWrapperHeight)
+    
     if (appOriginalHeight < mainWrapperHeight) {
-     console.log('app O is less')
      let difference = mainWrapperHeight - appOriginalHeight
-     console.log(difference)
      document.getElementById('mainApp').style.height = appOriginalHeight + difference + 'px'
     } else if (appOriginalHeight >= mainWrapperHeight) {
      console.log('main O is less')
@@ -43,12 +40,9 @@ function App() {
 
       // change the height
       let mainWrapperHeight = mainWrapper.clientHeight
-       console.log(appOriginalHeight)
-       console.log(mainWrapperHeight)
        if (appOriginalHeight < mainWrapperHeight) {
         console.log('app O is less')
         let difference = mainWrapperHeight - appOriginalHeight
-        console.log(difference)
         document.getElementById('mainApp').style.height = appOriginalHeight + difference + 'px'
        } else if (appOriginalHeight >= mainWrapperHeight) {
         console.log('main O is less')
@@ -88,12 +82,8 @@ function App() {
         
        // adjust height
        let mainWrapperHeight = mainWrapper.clientHeight
-       console.log(appOriginalHeight)
-       console.log(mainWrapperHeight)
        if (appOriginalHeight < mainWrapperHeight) {
-        console.log('app O is less')
         let difference = mainWrapperHeight - appOriginalHeight
-        console.log(difference)
         document.getElementById('mainApp').style.height = appOriginalHeight + difference + 'px'
        } else if (appOriginalHeight >= mainWrapperHeight) {
         console.log('main O is less')
