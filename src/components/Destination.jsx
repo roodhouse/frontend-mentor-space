@@ -9,7 +9,6 @@ import MarsImage from '../assets/destination/image-mars.webp'
 import EuropaImage from '../assets/destination/image-europa.webp';
 import TitanImage from '../assets/destination/image-titan.webp'
 
-
 function Destination() {
 
     const [thePlanets, setThePlanets] = useState('')
