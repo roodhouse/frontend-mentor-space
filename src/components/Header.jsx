@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Logo from './header/Logo'
 import Hamburger from './header/Hamburger'
 import Menu from './header/Menu'
+import { motion } from "framer-motion"
 
 function Header() {
 
@@ -39,9 +40,9 @@ function Header() {
     <>
     <div id="headerContainer" className='xl:flex xl:items-center xl:justify-between'>
       <div id="iconContainer" className='flex justify-between items-center'>
-        <div id="logoWrapper" className='xl:mr-16'>
+        <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: .8 }} id="logoWrapper" className='xl:mr-16'>
           <Logo />
-        </div>
+        </motion.div>
         <div id="hamburger" className='md:hidden'>
           <Hamburger />
         </div>

@@ -6,8 +6,6 @@ import Home from './components/Home';
 import Crew from './components/Crew';
 import Technology from './components/Technology'
 
-// add framer motion
-
 function App() {
 
   const [view, setView] = useState('home')
